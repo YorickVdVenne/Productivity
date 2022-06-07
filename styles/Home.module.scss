@@ -1,0 +1,56 @@
+.container {
+  padding: 0 2rem;
+  background-color: #873170;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title a {
+  font-family: Reckless;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 40px;
+  color: white;
+}
+
+.title {
+  font-family: TT Commons Medium;
+  font-weight: 500;
+  font-size: 40px;
+  color: white;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.logo {
+  height: 170px;
+  width: 170px;
+  left: 70px;
+  top: 35px;
+  border-radius: 0px;  
+}
+
+.leftButton {
+  margin-right: 31px;
+}
+
+.rightButton {
+  margin-left: 31px;
+}

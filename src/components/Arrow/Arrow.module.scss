@@ -1,0 +1,17 @@
+.arrow {
+    margin-right: 10px;
+    display: block;
+    stroke: #ffffff;
+    stroke-width: 2px;
+    padding: 0;
+    width: 20px;
+  }
+  
+  .arrow--left {
+    transform: rotate(180deg);
+  }
+  
+  .arrow--dark {
+    stroke: #000000;
+  }
+  
