@@ -2,14 +2,14 @@
 import dynamic from 'next/dynamic';
 import styles from '../../styles/Employee.module.scss';
 
-const TeamleadNavigation = dynamic(() => import('../../src/components/TeamleadNavigation'));
+const EmployeeNavigation = dynamic(() => import('../../src/components/EmployeeNavigation'));
 
-export default function Home() {
+export default function Feedback() {
   return (
     <div className={styles.body}>
-      <TeamleadNavigation />
+      <EmployeeNavigation />
       <div className={styles.main}>
-        Teamlead homepage
+        Employee Feedbackpage
       </div>
     </div>
   )
