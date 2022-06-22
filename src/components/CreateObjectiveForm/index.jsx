@@ -1,20 +1,31 @@
 import React from 'react';
 import styles from './CreateObjectiveForm.module.scss';
 import dynamic from 'next/dynamic';
+import { db } from '../../../db/db';
 
 const CreateButton = dynamic(() => import('../../../src/components/CreateButton'));
 
-export default function CreateObjectiveForm() {
+export default function CreateObjectiveForm({onSend}) {
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
         const objective = e.target.objective.value;
         const quarter = e. target.radio.value;
-        
+
+        try {
+            db.open();
+            db.objectives.add({
+                objective,
+                quarter
+            });
+            onSend();
+        } catch (error) {
+            console.warn('Something went wrong');
+        }
     }
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form autoComplete="off" className={styles.form} onSubmit={handleSubmit}>
             <label className={styles.label} htmlFor="objective">Objective<span className={styles.required}>*</span></label>
             <input className={styles.textfield} type="text" id="objective" name="objective" required />
 

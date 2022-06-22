@@ -1,0 +1,32 @@
+.button {
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    border-radius: 50px;
+  
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 250ms ease-in-out;
+    border: 3px solid #4BC190;
+  
+    &:hover {
+        background: #4BC190;
+        border: 3px solid #4BC190;
+        cursor: pointer;
+  
+        .text {
+            color: white;
+        }
+    }
+  }
+  
+  .text {
+    font-family: 'TT Commons';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+  
+    text-align: center;
+    letter-spacing: 0;
+    color: #4BC190;
+  }

@@ -1,0 +1,35 @@
+.card {
+  background-color: #FBFAFF;
+  margin-bottom: 24px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    margin-left: 24px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+
+    letter-spacing: 0;
+}
+
+.add {
+    margin-top: 29px;
+    margin-right: 36px;
+}
+
+.progress {
+    margin-left: 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.quarter {
+    margin-left: 16px;
+}
