@@ -1,0 +1,31 @@
+.button {
+    padding: 5px 40px 5px 40px;
+  background: #4BC190;
+  border-radius: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 250ms ease-in-out;
+  border: 3px solid #4BC190;
+
+  &:hover {
+    background-color: white;
+    border: 3px solid #4BC190;
+
+    .text {
+      color: #4BC190;
+    }
+  }
+}
+
+.text {
+  font-family: 'TT Commons';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  text-align: center;
+  letter-spacing: -0.333333px;
+  color: #FFFFFF;
+}

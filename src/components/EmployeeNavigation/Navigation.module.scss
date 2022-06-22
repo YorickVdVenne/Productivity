@@ -1,6 +1,6 @@
 .sidebar {
     height: 100%;
-    width: 100px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -13,18 +13,18 @@
 .logo {
     width: 100px;
     height: 100px;
+    margin-left: 23px;
 }
 
 .sidebar a {
     font-family: 'TT Commons';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 10;
     font-size: 16px;
     line-height: 19px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
     &:hover .subnav {
       display: block;
@@ -34,27 +34,23 @@
 .nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   color: white;
+  margin-top: 40px;
 }
 
 .icons {
     width: 36px;
     height: 36px;
+    margin-right:9px;
 }
 
-.links {
-  width: 80px;
-  height: 80px;
-  margin-top: 14px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
+.iconText {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
 
-  &:first-child {
-    margin-top: 34px;
-  }
+.items {
 
   &:hover {
     background: rgba(0, 0, 0, 0.2);
@@ -65,50 +61,40 @@
   }
 }
 
-.links.active { 
+.items.active { 
   background-color:rgba(0, 0, 0, 0.3);
+  font-weight: 700;
 }
 
-.subnav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 100px;
-  background-color: #D4DBF6;
-  overflow-x: hidden;
+.links {
+  padding-left: 32px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+
+}
+
+.sublinks {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  color: black;
-  font-size: 20px;
-  letter-spacing: -0.333333px;
 }
 
 .item {
-  width: 152px;
-  height: 60px;
-  margin-top: 44px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 77px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-between;
 
-  &:first-child {
-    margin-top: 129px;
-  }
-
-  &:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  &:active {
-    background-color: white;
+  &:last-child {
+    margin-bottom: 19px;
   }
 }
 
-.item.active { 
-  background-color:white;
+.item.active {
+  font-weight: 1000;
+}
+
+.arrow {
+  margin-right: 15px;
 }
