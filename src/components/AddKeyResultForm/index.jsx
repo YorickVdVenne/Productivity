@@ -10,7 +10,7 @@ export default function AddKeyResultForm({onSend, objectiveId}) {
         e.preventDefault();
         const result = e.target.result.value;
         const objectiveKey = objectiveId;
-        const progress = 0
+        const progress = 0;
 
         try {
             db.open();

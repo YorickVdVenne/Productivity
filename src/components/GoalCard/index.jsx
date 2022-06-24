@@ -18,7 +18,6 @@ export default function GoalCard({objective, showModal, objectiveId}) {
             calculateProgressValue(allKeyResults);
         }
         getKeyResults();
-        
     }, [])
 
     function calculateProgressValue(results) {
@@ -30,6 +29,28 @@ export default function GoalCard({objective, showModal, objectiveId}) {
 
             setProgress(Math.round((totalProgress / maxProgress) * 100))
         }
+    }
+
+    async function addCompleteObjective() {
+        const title = objective.objective;
+        const q = objective.quarter;
+        const objectiveKey = objective.id;
+
+        try {
+            db.open();
+            db.completed.add({
+                title,
+                q,
+                objectiveKey
+            });
+        deleteObjective();
+        } catch (error) {
+            console.warn('Something went wrong');
+        }
+    }
+
+    function deleteObjective() {
+        db.objectives.where({id: objective.id}).delete();
     }
 
     return (
@@ -46,6 +67,9 @@ export default function GoalCard({objective, showModal, objectiveId}) {
             <div className={styles.progress}>
                 <ProgressBar progress={progress}/>
                 <span className={styles.quarter}>{objective?.quarter}</span>
+                {progress >= 100 ? 
+                    <button className={styles.complete} onClick={addCompleteObjective}>Complete Objective</button>
+                :''}
             </div>
             <div className={styles.results}>
                 {keyResults.length > 0 && 
