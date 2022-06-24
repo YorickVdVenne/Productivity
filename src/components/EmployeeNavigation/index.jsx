@@ -36,7 +36,7 @@ export default function EmployeeNavigation() {
                             <span className={styles.iconText}>Goals</span>
                         </a>
                     </Link>
-                    {activeLink === '/employee/goals' || activeLink === '/employee/goals/team' || activeLink === '/employee/goals/company' ? <div className={styles.sublinks}>
+                    {activeLink === '/employee/goals' || activeLink === '/employee/goals/team' || activeLink === '/employee/goals/company' || activeLink === '/employee/goals/completed' ? <div className={styles.sublinks}>
                         <Link href='/employee/goals'>
                             <a className={`${styles.item} ${activeLink === '/employee/goals' ? styles.active : ''}`}>
                                 <span>Your goals</span>
@@ -53,6 +53,12 @@ export default function EmployeeNavigation() {
                             <a className={`${styles.item} ${activeLink === '/employee/goals/company' ? styles.active : ''}`}>
                                 <span>Company</span>
                                 {activeLink === '/employee/goals/company' && <div className={styles.arrow}><Arrow /></div>}
+                            </a>
+                        </Link>
+                        <Link href='/employee/goals/completed'>
+                            <a className={`${styles.item} ${activeLink === '/employee/goals/completed' ? styles.active : ''}`}>
+                                <span>Completed</span>
+                                {activeLink === '/employee/goals/completed' && <div className={styles.arrow}><Arrow /></div>}
                             </a>
                         </Link>
                     </div> : ''}

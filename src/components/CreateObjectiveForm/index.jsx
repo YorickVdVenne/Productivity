@@ -8,12 +8,14 @@ export default function CreateObjectiveForm({onSend}) {
         e.preventDefault();
         const objective = e.target.objective.value;
         const quarter = e. target.radio.value;
+        const progress = 0
 
         try {
             db.open();
             db.objectives.add({
                 objective,
-                quarter
+                quarter,
+                progress
             });
             onSend();
         } catch (error) {

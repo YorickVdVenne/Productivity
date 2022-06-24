@@ -7,9 +7,7 @@ import KeyResultCard from '../KeyResultCard';
 
 export default function GoalCard({objective, showModal, objectiveId}) {
     const [keyResults, setKeyResults] = React.useState([]);
-    const [progress, setProgress] = React.useState([]);
-
-    console.log(progress)
+    const [progress, setProgress] = React.useState(0);
 
     useEffect(() => {
         const getKeyResults = async() => {
@@ -25,16 +23,13 @@ export default function GoalCard({objective, showModal, objectiveId}) {
 
     function calculateProgressValue(results) {
         if(results.length > 0) {
-            const total = results.length * 100;
-            const test = progress / total;
-            console.log(test * 100)
-        }
-    }
+            const maxProgress = results.length * 100;
+            const totalProgress = results.reduce((previous, current) => {
+                return previous + parseInt(current.progress)
+            }, 0)
 
-    function addProgressPercentage(newProgressValue) {
-        setProgress([
-            ...progress, newProgressValue
-        ])
+            setProgress(Math.round((totalProgress / maxProgress) * 100))
+        }
     }
 
     return (
@@ -49,13 +44,13 @@ export default function GoalCard({objective, showModal, objectiveId}) {
                 </div>
             </div>
             <div className={styles.progress}>
-                <ProgressBar />
+                <ProgressBar progress={progress}/>
                 <span className={styles.quarter}>{objective?.quarter}</span>
             </div>
             <div className={styles.results}>
                 {keyResults.length > 0 && 
                     keyResults.map(result => {
-                        return <KeyResultCard result={result} progress={addProgressPercentage}/>
+                        return <KeyResultCard key={result.id} result={result}/>
                     })
                 }
             </div>

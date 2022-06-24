@@ -8,24 +8,30 @@ import CloseButton from '../CloseButton';
 import EditKeyResultForm from '../EditKeyResultForm';
 
 
-export default function KeyResultCard({result, progress}) {
-    const [progressValue, setProgressValue] = React.useState();
+export default function KeyResultCard({result}) {
+    const [progressValue, setProgressValue] = React.useState(result.progress);
     const [showEditModal, setShowEditModal] = React.useState(false);
 
     useEffect(() => {
-        progress(progressValue);
+        try {
+            db.open();
+            db.results.update(result.id, {
+                progress: progressValue
+            });
+        } catch (error) {
+            console.warn(error);
+        }
     }, [progressValue])
     
     const deleteKeyResult = async() => {
         db.results.where({id: result.id}).delete()
-        console.log('deleted!');
     }
 
     return (
         <div className={styles.card}>
             <span className={styles.blue} />
             <p className={styles.title}>{result.result}</p>
-            <DraggableProgressBar progressValue={setProgressValue}/>
+            <DraggableProgressBar result={result} progressValue={setProgressValue}/>
             <p className={styles.percentage}>{progressValue ? `${progressValue}%` : "0%"}</p>
             <EditButton onClick={() => {setShowEditModal(true)}}/>
             <DeleteButton onClick={deleteKeyResult}/>

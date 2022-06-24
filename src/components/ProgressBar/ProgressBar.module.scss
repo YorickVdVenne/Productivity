@@ -1,27 +1,30 @@
 .bar {
-    width: 155px;
-    height: 24px;
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
-    background-color: #C4C4C4;
-    opacity: 50%;
-  }
+  width: 155px;
+  height: 24px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  background-color: #DFDFE1;
+}
   
-  .progress {
-    --progress: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    width: var(--progress);
-    background-color: #868686;
-    margin: 0;
-  }
+.progress {
+  --progress: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: var(--progress);
+  background-color: #868686;
+  margin: 0;
+}
 
-  .text {
-    color: white;
-    margin-left: 11px;
-    font-weight: 50;
-    font-size: 14px;
-  }
+.green {
+  background-color: #4BC190;
+}
+
+.text {
+  color: white;
+  margin-left: 11px;
+  font-weight: 50;
+  font-size: 14px;
+}
