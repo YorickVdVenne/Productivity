@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Arrow.module.scss';
 
 export default function Arrow({left, dark}) {
     return (

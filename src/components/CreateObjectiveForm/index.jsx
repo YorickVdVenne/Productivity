@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './CreateObjectiveForm.module.scss';
-import dynamic from 'next/dynamic';
 import { db } from '../../../db/db';
-
-const CreateButton = dynamic(() => import('../../../src/components/CreateButton'));
 
 export default function CreateObjectiveForm({onSend}) {
 

@@ -9,13 +9,13 @@ const EmployeeNavigation = dynamic(() => import('../../src/components/EmployeeNa
 const CreateButton = dynamic(() => import('../../src/components/CreateButton'));
 const CloseButton = dynamic(() => import('../../src/components/CloseButton'));
 const CreateObjectiveForm = dynamic(() => import('../../src/components/CreateObjectiveForm'));
+const AddKeyResultForm = dynamic(() => import('../../src/components/AddKeyResultForm'));
 
 export default function Goals() {
   const [showObjectiveModal, setShowObjectiveModal] = React.useState(false);
   const [showKeyResultModal, setShowKeyResultModal] = React.useState(false);
   const [objectives, setObjectives] = React.useState([]);
-
-  console.log(showKeyResultModal)
+  const [objectiveId, setObjectiveId] = React.useState();
 
   useEffect(() => {
     const getObjectives = async() => {
@@ -47,6 +47,7 @@ export default function Goals() {
                 return <GoalCard 
                   objective={objective} 
                   showModal={setShowKeyResultModal}
+                  objectiveId={setObjectiveId}
                 />
               })}
         </div>
@@ -81,6 +82,7 @@ export default function Goals() {
 
             <hr className={styles.line}/>
 
+            <AddKeyResultForm objectiveId={objectiveId} onSend={() => {setShowKeyResultModal(false)}}/>
           </div>
         </>
         ) : null}

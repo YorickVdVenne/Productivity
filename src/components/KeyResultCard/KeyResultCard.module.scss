@@ -1,0 +1,90 @@
+.card {
+    height: 51px;
+    background-color: white;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.blue {
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+    display: flex;
+    width: 5px;
+    background-color: #3A5DD4;
+}
+
+.title {
+    margin-left: 9px;
+}
+
+.percentage {
+    background-color: #97A8E4;
+    color: white;
+    width: 32px;
+    height: 24px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 1px;
+}
+
+.curtain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    left: 0;
+    top: 0;
+  
+    background-color: black;
+    opacity: 20%;
+}
+  
+.modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    width: 765px;
+    height: 465px;
+  
+    background-color: white;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+}
+
+.subtitle {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: -0.333333px;
+}
+  
+.close {
+    position: absolute;
+    right: -20px;
+    top: -15px;
+}
+
+.line {
+    width: 100%;
+    height: 0;
+    border: 1px solid #E1E1E1;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+  

@@ -1,0 +1,122 @@
+.form {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+
+    input[type="radio"] {
+        display: none;
+        &:checked {
+          + .box {
+            background-color: #9F5A8D;
+            border: 2px solid #873170;
+            
+            span {
+              color: white;
+              &:before {
+                transform: translateY(0px);
+                opacity: 1;
+              }
+            }
+          }
+        }
+    }
+}
+
+.label {
+    font-size: 20px;
+}
+
+.required {
+    color: #F85565;
+}
+
+.textfield {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 155px;
+    height: 50px;
+    margin-right: 25px;
+    background-color: white;
+    transition: all 250ms ease;
+    will-change: transition;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid black;
+
+    &:active {
+      transform: translateY(10px);
+    }
+  }
+
+.boxtext {
+    left: 0;
+    right: 0;
+    transition: all 300ms ease;
+    user-select: none;
+    color: black;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+
+    &:before {
+        display: block;
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+        font-weight: normal;
+        color: white;
+    }
+}
+
+.submit__button {
+  font-family: 'TT Commons';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  text-align: center;
+  letter-spacing: 0;
+  color: #FFFFFF;
+
+  margin-top: 30px;
+  padding: 10px 20px 10px 20px;
+  background: #4BC190;
+  border-radius: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 250ms ease-in-out;
+  border: 3px solid #4BC190;
+
+  &:hover {
+    background-color: white;
+    border: 3px solid #4BC190;
+    color: #4BC190;
+    cursor: pointer;
+  }
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
