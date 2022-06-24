@@ -29,12 +29,18 @@ export default function KeyResultCard({result}) {
 
     return (
         <div className={styles.card}>
-            <span className={styles.blue} />
             <p className={styles.title}>{result.result}</p>
-            <DraggableProgressBar result={result} progressValue={setProgressValue}/>
-            <p className={styles.percentage}>{progressValue ? `${progressValue}%` : "0%"}</p>
-            <EditButton onClick={() => {setShowEditModal(true)}}/>
-            <DeleteButton onClick={deleteKeyResult}/>
+            <div className={styles.wrapper}>
+                <DraggableProgressBar result={result} progressValue={setProgressValue}/>
+                <p className={styles.percentage}>{progressValue ? `${progressValue}%` : "0%"}</p>
+                <div className={styles.edit}>
+                    <EditButton onClick={() => {setShowEditModal(true)}}/>
+                </div>
+                <div className={styles.delete}>
+                    <DeleteButton onClick={deleteKeyResult}/>
+                </div>
+            </div>
+            
             {
                 showEditModal ? (
                     <>
