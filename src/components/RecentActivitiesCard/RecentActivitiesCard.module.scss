@@ -1,0 +1,29 @@
+.card {
+    background-color: #FBFAFF;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    border-radius: 1%;
+}
+
+.profile {
+    margin-left: 8px;
+}
+
+.title {
+    margin: 0;
+    font-weight: 500;
+}
+
+.role {
+    margin: 0;
+    opacity: 50%;
+}
+
+.text_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    width: 100%;
+}

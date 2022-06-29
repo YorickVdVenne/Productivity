@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import styles from '../../../styles/Goals.module.scss';
 import { db } from '../../../db/db';
 import GoalCard from '../../../src/components/GoalCard';
+import RecentActivitiesCard from '../../../src/components/RecentActivitiesCard';
 
 
 const EmployeeNavigation = dynamic(() => import('../../../src/components/EmployeeNavigation'));
@@ -42,9 +43,7 @@ export default function Team() {
           )}
           <hr className={styles.line}/>
           <h1 className={styles.second_title}>Recent activities</h1>
-          <div className={styles.recent}>
-            Here will come the recent activities
-          </div>
+          <RecentActivitiesCard />
         </div>
       </div>
     </div>
