@@ -7,7 +7,7 @@ export default function CompletedKeyResultCard({result}) {
         <div className={styles.card}>
             <p className={styles.title}>{result.result}</p>
             <div className={styles.wrapper}>
-                <p className={styles.percentage}>Done</p>
+                <p className={styles.percentage}>done</p>
             </div>
         </div>
     );
