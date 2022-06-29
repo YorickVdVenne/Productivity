@@ -50,6 +50,7 @@ export default function Goals() {
                   showModal={setShowKeyResultModal}
                   objectiveId={setObjectiveId}
                   teamGoal={false}
+                  companyGoal={false}
                 />
               })}
         </div>

@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import styles from '../../../styles/Goals.module.scss';
 import { db } from '../../../db/db';
 import GoalCard from '../../../src/components/GoalCard';
+import RecentActivitiesCard from '../../../src/components/RecentActivitiesCard';
 
 
 const EmployeeNavigation = dynamic(() => import('../../../src/components/EmployeeNavigation'));
@@ -31,14 +32,19 @@ export default function Company() {
 
         <div className={styles.content}>
           {objectives.length > 0 && 
-              objectives.map(objective => {
-                return <GoalCard 
-                  key={objective.id}
-                  objective={objective} 
-                  objectiveId={setObjectiveId}
-                  teamGoal={true}
-                />
-              })}
+            objectives.map(objective => {
+              return <GoalCard 
+                key={objective.id}
+                objective={objective} 
+                objectiveId={setObjectiveId}
+                teamGoal={true}
+                companyGoal={true}
+              />
+            })
+          }
+          <hr className={styles.line}/>
+          <h1 className={styles.second_title}>Recent activities</h1>
+          <RecentActivitiesCard />
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ import ContributorsButton from '../ContributorsButton';
 import ContributorsCard from '../ContributorsCard';
 
 
-export default function KeyResultCard({result, teamGoal}) {
+export default function KeyResultCard({result, teamGoal, companyGoal}) {
     const [progressValue, setProgressValue] = React.useState(result.progress);
     const [showEditModal, setShowEditModal] = React.useState(false);
     const [showContributorsModal, setShowContributorsModal] = React.useState(false);
@@ -35,7 +35,7 @@ export default function KeyResultCard({result, teamGoal}) {
         <div className={styles.card}>
             <p className={styles.title}>{result.result}</p>
             <div className={styles.wrapper}>
-                <DraggableProgressBar result={result} progressValue={setProgressValue}/>
+                {!companyGoal && <DraggableProgressBar result={result} progressValue={setProgressValue}/>}
                 <p className={styles.percentage}>{progressValue ? `${progressValue}%` : "0%"}</p>
                 {teamGoal ? 
                 <div className={styles.contributors}>

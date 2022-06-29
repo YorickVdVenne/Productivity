@@ -38,6 +38,7 @@ export default function Team() {
                 objective={objective} 
                 objectiveId={setObjectiveId}
                 teamGoal={true}
+                companyGoal={false}
               />
             }
           )}

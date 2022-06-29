@@ -5,7 +5,7 @@ import styles from './GoalCard.module.scss';
 import { db } from '../../../db/db';
 import KeyResultCard from '../KeyResultCard';
 
-export default function GoalCard({objective, showModal, objectiveId, teamGoal}) {
+export default function GoalCard({objective, showModal, objectiveId, teamGoal, companyGoal}) {
     const [keyResults, setKeyResults] = React.useState([]);
     const [progress, setProgress] = React.useState(0);
 
@@ -78,7 +78,7 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal}) 
             <div className={styles.results}>
                 {keyResults.length > 0 && 
                     keyResults.map(result => {
-                        return <KeyResultCard key={result.id} result={result} teamGoal={teamGoal}/>
+                        return <KeyResultCard key={result.id} result={result} teamGoal={teamGoal} companyGoal={companyGoal}/>
                     })
                 }
             </div>
