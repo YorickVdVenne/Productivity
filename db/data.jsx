@@ -164,4 +164,76 @@ export const teamKeyResults = [
     progress: 50,
     result: "Increase team member contributing to testing from 1 to 3 people on average testing product before release"
   }
-]
+];
+
+export const companyObjectives = [
+  {
+    id: 1,
+    objective: "Grow our business",
+    progress: 45,
+    quarter: " Q3-2022"
+  },
+  {
+    id: 2,
+    objective: "Please our customers",
+    progress: 56,
+    quarter: " Q3-2022"
+  },
+  {
+    id: 3,
+    objective: "Strengthen our corporate culture",
+    progress: 58,
+    quarter: " Q3-2022"
+  }
+];
+
+export const companyKeyResults = [
+  {
+    id: 1,
+    objectiveKey: 1,
+    progress: 75,
+    result: "row revenue to $3M"
+  },
+  {
+    id: 2,
+    objectiveKey: 1,
+    progress: 20,
+    result: "Reduce churn to <5% annually through customer success"
+  },
+  {
+    id: 3,
+    objectiveKey: 2,
+    progress: 50,
+    result: "Collect feedback from 20 customer/month"
+  },
+  {
+    id: 4,
+    objectiveKey: 2,
+    progress: 15,
+    result: "Boost customer rentention to 97%"
+  },
+  {
+    id: 5,
+    objectiveKey: 2,
+    progress: 60,
+    result: "Maintain NPS of 9"
+  },
+  {
+    id: 6,
+    objectiveKey: 3,
+    progress: 100,
+    result: "Roll out a continuous two-wat feedback loop via weekly surveys"
+  },
+  {
+    id: 7,
+    objectiveKey: 3,
+    progress: 25,
+    result: "Maintain an average employee statisfaction score of 8 or higher"
+  },
+  {
+    id: 8,
+    objectiveKey: 3,
+    progress: 50,
+    result: "Create & launch new mentorship program by the end of Q3"
+  }
+];

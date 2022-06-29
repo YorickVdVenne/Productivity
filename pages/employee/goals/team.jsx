@@ -17,7 +17,7 @@ export default function Team() {
       <EmployeeNavigation />
       <div className={styles.main}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Your Team</h1>
+          <h1 className={styles.title}>Your team</h1>
         </div>
 
         <hr className={styles.line}/>

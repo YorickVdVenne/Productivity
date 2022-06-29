@@ -37,11 +37,11 @@ export default function KeyResultCard({result, teamGoal, companyGoal}) {
             <div className={styles.wrapper}>
                 {!companyGoal && <DraggableProgressBar result={result} progressValue={setProgressValue}/>}
                 <p className={styles.percentage}>{progressValue ? `${progressValue}%` : "0%"}</p>
-                {teamGoal ? 
+                {teamGoal || companyGoal ? 
                 <div className={styles.contributors}>
                     <ContributorsButton onClick={() => {setShowContributorsModal(true)} }/>
                 </div>
-                :
+                : 
                 <>
                     <div className={styles.edit}>
                         <EditButton onClick={() => {setShowEditModal(true)}}/>

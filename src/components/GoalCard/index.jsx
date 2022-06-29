@@ -4,6 +4,7 @@ import SecondaryCreateButton from '../SecondaryCreateButton';
 import styles from './GoalCard.module.scss';
 import { db } from '../../../db/db';
 import { teamKeyResults } from '../../../db/data';
+import { companyKeyResults } from '../../../db/data';
 import KeyResultCard from '../KeyResultCard';
 
 export default function GoalCard({objective, showModal, objectiveId, teamGoal, companyGoal}) {
@@ -15,6 +16,10 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal, c
             const allTeamKeyResults = teamKeyResults.filter(result => result.objectiveKey === objective.id)
             setKeyResults(allTeamKeyResults)
             calculateProgressValue(allTeamKeyResults);
+        } else if(companyGoal){
+            const allCompanyKeyResults = companyKeyResults.filter(result => result.objectiveKey === objective.id)
+            setKeyResults(allCompanyKeyResults)
+            calculateProgressValue(allCompanyKeyResults);
         } else {
             const getKeyResults = async() => {
                 const allKeyResults = await db.results
@@ -64,7 +69,7 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal, c
         <div className={styles.card}>
             <div className={styles.header}>
                 <h3 className={styles.title}>{objective?.objective}</h3>
-                {!teamGoal && 
+                {teamGoal ? '' : companyGoal ? '' : 
                     <div className={styles.add}>
                         <SecondaryCreateButton 
                             buttonTitle={'Add key result'}
