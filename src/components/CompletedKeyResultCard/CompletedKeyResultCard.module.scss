@@ -1,0 +1,38 @@
+.card {
+    height: 51px;
+    background-color: white;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 5px solid #3A5DD4;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.title {
+    margin-left: 9px;
+}
+
+.percentage {
+    background-color: #97A8E4;
+    color: white;
+    width: 32px;
+    height: 24px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 1px;
+    margin-right: 24px;
+    margin-left: 4px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 13px;
+}

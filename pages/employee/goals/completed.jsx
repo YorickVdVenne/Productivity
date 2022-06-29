@@ -2,23 +2,16 @@ import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import styles from '../../../styles/Goals.module.scss';
 import { db } from '../../../db/db';
-import GoalCard from '../../../src/components/GoalCard';
+import CompletedGoalCard from '../../../src/components/CompletedGoalCard';
 
 const EmployeeNavigation = dynamic(() => import('../../../src/components/EmployeeNavigation'));
-const CreateButton = dynamic(() => import('../../../src/components/CreateButton'));
-const CloseButton = dynamic(() => import('../../../src/components/CloseButton'));
-const CreateObjectiveForm = dynamic(() => import('../../../src/components/CreateObjectiveForm'));
-const AddKeyResultForm = dynamic(() => import('../../../src/components/AddKeyResultForm'));
 
 export default function Completed() {
-  const [showObjectiveModal, setShowObjectiveModal] = React.useState(false);
-  const [showKeyResultModal, setShowKeyResultModal] = React.useState(false);
   const [objectives, setObjectives] = React.useState([]);
-  const [objectiveId, setObjectiveId] = React.useState();
 
   useEffect(() => {
     const getObjectives = async() => {
-      const allObjectives = await db.objectives.toArray();
+      const allObjectives = await db.completed.toArray();
       setObjectives(allObjectives);
     }
     getObjectives();
@@ -37,49 +30,13 @@ export default function Completed() {
         <div className={styles.content}>
           {objectives.length > 0 && 
               objectives.map(objective => {
-                return <GoalCard 
+                return <CompletedGoalCard 
                   key={objective.id}
                   objective={objective} 
-                  showModal={setShowKeyResultModal}
-                  objectiveId={setObjectiveId}
                 />
               })}
         </div>
       </div>
-      {
-        showObjectiveModal ? (
-        <>
-          <div className={styles.curtain} onClick={() => {setShowObjectiveModal(false)}}></div>
-          <div className={styles.modal}>
-            <div className={styles.close}>
-              <CloseButton onClick={() => {setShowObjectiveModal(false)}} />
-            </div>
-
-            <h1 className={styles.subtitle}>Create new Objective</h1>
-
-            <hr className={styles.line}/>
-
-            <CreateObjectiveForm onSend={() => {setShowObjectiveModal(false)}}/>
-          </div>
-        </>
-        ) : null}
-      {
-        showKeyResultModal ? (
-        <>
-          <div className={styles.curtain} onClick={() => {setShowKeyResultModal(false)}}></div>
-          <div className={styles.modal}>
-            <div className={styles.close}>
-              <CloseButton onClick={() => {setShowKeyResultModal(false)}} />
-            </div>
-
-            <h1 className={styles.subtitle}>Add key result</h1>
-
-            <hr className={styles.line}/>
-
-            <AddKeyResultForm objectiveId={objectiveId} onSend={() => {setShowKeyResultModal(false)}}/>
-          </div>
-        </>
-        ) : null}
     </div>
   )
 }

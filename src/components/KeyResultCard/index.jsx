@@ -4,13 +4,17 @@ import DraggableProgressBar from '../DraggableProgressBar';
 import EditButton from '../EditButton';
 import styles from './KeyResultCard.module.scss';
 import { db } from '../../../db/db';
+import { contributors } from '../../../db/data';
 import CloseButton from '../CloseButton';
 import EditKeyResultForm from '../EditKeyResultForm';
+import ContributorsButton from '../ContributorsButton';
+import ContributorsCard from '../ContributorsCard';
 
 
-export default function KeyResultCard({result}) {
+export default function KeyResultCard({result, teamGoal}) {
     const [progressValue, setProgressValue] = React.useState(result.progress);
     const [showEditModal, setShowEditModal] = React.useState(false);
+    const [showContributorsModal, setShowContributorsModal] = React.useState(false);
 
     useEffect(() => {
         try {
@@ -33,14 +37,21 @@ export default function KeyResultCard({result}) {
             <div className={styles.wrapper}>
                 <DraggableProgressBar result={result} progressValue={setProgressValue}/>
                 <p className={styles.percentage}>{progressValue ? `${progressValue}%` : "0%"}</p>
-                <div className={styles.edit}>
-                    <EditButton onClick={() => {setShowEditModal(true)}}/>
+                {teamGoal ? 
+                <div className={styles.contributors}>
+                    <ContributorsButton onClick={() => {setShowContributorsModal(true)} }/>
                 </div>
-                <div className={styles.delete}>
-                    <DeleteButton onClick={deleteKeyResult}/>
-                </div>
+                :
+                <>
+                    <div className={styles.edit}>
+                        <EditButton onClick={() => {setShowEditModal(true)}}/>
+                    </div>
+                    <div className={styles.delete}>
+                        <DeleteButton onClick={deleteKeyResult}/>
+                    </div>
+                </>
+                }
             </div>
-            
             {
                 showEditModal ? (
                     <>
@@ -55,6 +66,30 @@ export default function KeyResultCard({result}) {
                         <hr className={styles.line}/>
 
                         <EditKeyResultForm result={result} onSend={() => {setShowEditModal(false)}}/>
+                    </div>
+                    </>
+                ) : null
+            }
+            {
+                showContributorsModal ? (
+                    <>
+                    <div className={styles.curtain} onClick={() => {setShowContributorsModal(false)}}/>
+                    <div className={styles.modal}>
+                        <div className={styles.close}>
+                        <CloseButton onClick={() => {setShowContributorsModal(false)}} />
+                        </div>
+
+                        <h1 className={styles.subtitle}>Contributors</h1>
+
+                        <hr className={styles.line}/>
+
+                        <div className={styles.contributors}>
+                            {contributors.length > 0 && 
+                                contributors.map(contributor => {
+                                    return <ContributorsCard key={contributor.name} contributor={contributor} />
+                                })
+                            }
+                        </div>
                     </div>
                     </>
                 ) : null

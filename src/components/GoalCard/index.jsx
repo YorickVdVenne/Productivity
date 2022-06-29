@@ -5,7 +5,7 @@ import styles from './GoalCard.module.scss';
 import { db } from '../../../db/db';
 import KeyResultCard from '../KeyResultCard';
 
-export default function GoalCard({objective, showModal, objectiveId}) {
+export default function GoalCard({objective, showModal, objectiveId, teamGoal}) {
     const [keyResults, setKeyResults] = React.useState([]);
     const [progress, setProgress] = React.useState(0);
 
@@ -57,24 +57,28 @@ export default function GoalCard({objective, showModal, objectiveId}) {
         <div className={styles.card}>
             <div className={styles.header}>
                 <h3 className={styles.title}>{objective?.objective}</h3>
-                <div className={styles.add}>
-                    <SecondaryCreateButton 
-                        buttonTitle={'Add key result'}
-                        onClick={() => {showModal(true), objectiveId(objective.id)}}
-                    />
-                </div>
+                {!teamGoal && 
+                    <div className={styles.add}>
+                        <SecondaryCreateButton 
+                            buttonTitle={'Add key result'}
+                            onClick={() => {showModal(true), objectiveId(objective.id)}}
+                        />
+                    </div>
+                }
             </div>
             <div className={styles.progress}>
                 <ProgressBar progress={progress}/>
                 <span className={styles.quarter}>{objective?.quarter}</span>
-                {progress >= 100 ? 
-                    <button className={styles.complete} onClick={addCompleteObjective}>Complete Objective</button>
+                {progress >= 100 ?
+                    <div className={styles.completed_wrapper}>
+                        <button className={styles.complete} onClick={addCompleteObjective}>Complete Objective</button>
+                    </div> 
                 :''}
             </div>
             <div className={styles.results}>
                 {keyResults.length > 0 && 
                     keyResults.map(result => {
-                        return <KeyResultCard key={result.id} result={result}/>
+                        return <KeyResultCard key={result.id} result={result} teamGoal={teamGoal}/>
                     })
                 }
             </div>

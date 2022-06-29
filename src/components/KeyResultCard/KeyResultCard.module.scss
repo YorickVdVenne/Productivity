@@ -28,6 +28,7 @@
     border-radius: 1px;
     margin-right: 24px;
     margin-left: 4px;
+    flex-shrink: 0;
 }
 
 .curtain {
@@ -53,7 +54,7 @@
     transform: translate(-50%, -50%);
   
     width: 765px;
-    height: 465px;
+    padding-bottom: 32px;
   
     background-color: white;
     box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.14);
@@ -93,4 +94,13 @@
 
 .edit {
     margin-right: 8px;
+    cursor: pointer;
+}
+
+.contributors {
+    width: 90%;
+}
+
+.delete {
+    cursor: pointer;
 }
