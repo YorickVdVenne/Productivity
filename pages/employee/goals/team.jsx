@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import styles from '../../../styles/Goals.module.scss';
-import { db } from '../../../db/db';
+import { teamObjectives } from '../../../db/data';
 import GoalCard from '../../../src/components/GoalCard';
 import RecentActivitiesCard from '../../../src/components/RecentActivitiesCard';
 
@@ -9,16 +9,8 @@ import RecentActivitiesCard from '../../../src/components/RecentActivitiesCard';
 const EmployeeNavigation = dynamic(() => import('../../../src/components/EmployeeNavigation'));
 
 export default function Team() {
-  const [objectives, setObjectives] = React.useState([]);
+  const [objectives, setObjectives] = React.useState(teamObjectives);
   const [objectiveId, setObjectiveId] = React.useState();
-
-  useEffect(() => {
-    const getObjectives = async() => {
-      const allObjectives = await db.objectives.toArray();
-      setObjectives(allObjectives);
-    }
-    getObjectives();
-  }, [])
 
   return (
     <div className={styles.body}>

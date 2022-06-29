@@ -3,6 +3,7 @@ import ProgressBar from '../ProgressBar';
 import SecondaryCreateButton from '../SecondaryCreateButton';
 import styles from './GoalCard.module.scss';
 import { db } from '../../../db/db';
+import { teamKeyResults } from '../../../db/data';
 import KeyResultCard from '../KeyResultCard';
 
 export default function GoalCard({objective, showModal, objectiveId, teamGoal, companyGoal}) {
@@ -10,14 +11,20 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal, c
     const [progress, setProgress] = React.useState(0);
 
     useEffect(() => {
-        const getKeyResults = async() => {
-            const allKeyResults = await db.results
-            .where({objectiveKey: objective.id})
-            .toArray();
-            setKeyResults(allKeyResults);
-            calculateProgressValue(allKeyResults);
+        if(teamGoal) {
+            const allTeamKeyResults = teamKeyResults.filter(result => result.objectiveKey === objective.id)
+            setKeyResults(allTeamKeyResults)
+            calculateProgressValue(allTeamKeyResults);
+        } else {
+            const getKeyResults = async() => {
+                const allKeyResults = await db.results
+                .where({objectiveKey: objective.id})
+                .toArray();
+                setKeyResults(allKeyResults);
+                calculateProgressValue(allKeyResults);
+            }
+            getKeyResults();
         }
-        getKeyResults();
     }, [])
 
     function calculateProgressValue(results) {
