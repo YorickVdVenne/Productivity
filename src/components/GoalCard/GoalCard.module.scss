@@ -69,3 +69,14 @@
       color: #4BC190;
     }
 }
+
+.delete {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete_text {
+    margin-left: 8px;
+}

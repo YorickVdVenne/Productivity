@@ -23,7 +23,7 @@ export default function Goals() {
       setObjectives(allObjectives);
     }
     getObjectives();
-  }, [])
+  }, [showObjectiveModal])
 
   return (
     <div className={styles.body}>

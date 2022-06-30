@@ -14,6 +14,7 @@ import ContributorsCard from '../ContributorsCard';
 export default function KeyResultCard({result, teamGoal, companyGoal}) {
     const [progressValue, setProgressValue] = React.useState(result.progress);
     const [showEditModal, setShowEditModal] = React.useState(false);
+    const [showDeleteModal, setShowDeleteModal] = React.useState(false);
     const [showContributorsModal, setShowContributorsModal] = React.useState(false);
 
     useEffect(() => {
@@ -47,7 +48,7 @@ export default function KeyResultCard({result, teamGoal, companyGoal}) {
                         <EditButton onClick={() => {setShowEditModal(true)}}/>
                     </div>
                     <div className={styles.delete}>
-                        <DeleteButton onClick={deleteKeyResult}/>
+                        <DeleteButton onClick={() => {setShowDeleteModal(true)}}/>
                     </div>
                 </>
                 }
@@ -66,6 +67,24 @@ export default function KeyResultCard({result, teamGoal, companyGoal}) {
                         <hr className={styles.line}/>
 
                         <EditKeyResultForm result={result} onSend={() => {setShowEditModal(false)}}/>
+                    </div>
+                    </>
+                ) : null
+            }
+            {
+                showDeleteModal ? (
+                    <>
+                    <div className={styles.curtain} onClick={() => {setShowDeleteModal(false)}}/>
+                    <div className={styles.modal}>
+                        <div className={styles.close}>
+                        <CloseButton onClick={() => {setShowDeleteModal(false)}} />
+                        </div>
+
+                        <p>Are you sure you want to delete this key result?</p>
+                        <div>
+                            <button className={styles.yes} onClick={() => deleteKeyResult()}>Yes</button>
+                            <button className={styles.no} onClick={() => setShowDeleteModal(false)}>No</button>
+                        </div>
                     </div>
                     </>
                 ) : null

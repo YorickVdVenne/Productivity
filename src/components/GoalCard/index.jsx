@@ -6,6 +6,7 @@ import { db } from '../../../db/db';
 import { teamKeyResults } from '../../../db/data';
 import { companyKeyResults } from '../../../db/data';
 import KeyResultCard from '../KeyResultCard';
+import DeleteButton from '../DeleteButton';
 
 export default function GoalCard({objective, showModal, objectiveId, teamGoal, companyGoal}) {
     const [keyResults, setKeyResults] = React.useState([]);
@@ -13,13 +14,19 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal, c
 
     useEffect(() => {
         if(teamGoal) {
-            const allTeamKeyResults = teamKeyResults.filter(result => result.objectiveKey === objective.id)
-            setKeyResults(allTeamKeyResults)
-            calculateProgressValue(allTeamKeyResults);
+            const getAllTeamKeyResults = async() => {
+                const allTeamKeyResults = await teamKeyResults.filter(result => result.objectiveKey === objective.id);
+                setKeyResults(allTeamKeyResults);
+                calculateProgressValue(allTeamKeyResults);
+            }
+            getAllTeamKeyResults();
         } else if(companyGoal){
-            const allCompanyKeyResults = companyKeyResults.filter(result => result.objectiveKey === objective.id)
-            setKeyResults(allCompanyKeyResults)
-            calculateProgressValue(allCompanyKeyResults);
+            const getAllCompanyKeyResults = async() => {
+                const allCompanyKeyResults = await companyKeyResults.filter(result => result.objectiveKey === objective.id)
+                setKeyResults(allCompanyKeyResults);
+                calculateProgressValue(allCompanyKeyResults);
+            }
+            getAllCompanyKeyResults();
         } else {
             const getKeyResults = async() => {
                 const allKeyResults = await db.results
@@ -30,7 +37,7 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal, c
             }
             getKeyResults();
         }
-    }, [])
+    }, [keyResults])
 
     function calculateProgressValue(results) {
         if(results.length > 0) {
@@ -61,8 +68,13 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal, c
         }
     }
 
-    function deleteObjective() {
-        db.objectives.where({id: objective.id}).delete();
+    async function deleteObjective() {
+        try {
+            db.open();
+            db.objectives.where({id: objective.id}).delete();
+        } catch (error) {
+            console.warn('Something went wrong');
+        }        
     }
 
     return (
@@ -88,10 +100,14 @@ export default function GoalCard({objective, showModal, objectiveId, teamGoal, c
                 :''}
             </div>
             <div className={styles.results}>
-                {keyResults.length > 0 && 
+                {keyResults.length > 0 ? 
                     keyResults.map(result => {
                         return <KeyResultCard key={result.id} result={result} teamGoal={teamGoal} companyGoal={companyGoal}/>
-                    })
+                    }) :
+                    <div onClick={() => deleteObjective()} className={styles.delete}>
+                        <DeleteButton onClick={() => deleteObjective()}/>
+                        <span className={styles.delete_text}>Delete this objective</span>
+                    </div>
                 }
             </div>
         </div>
