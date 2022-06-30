@@ -43,16 +43,17 @@ export default function Goals() {
 
         <div className={styles.content}>
           {objectives.length > 0 && 
-              objectives.map(objective => {
-                return <GoalCard 
-                  key={objective.id}
-                  objective={objective} 
-                  showModal={setShowKeyResultModal}
-                  objectiveId={setObjectiveId}
-                  teamGoal={false}
-                  companyGoal={false}
-                />
-              })}
+            objectives.map(objective => {
+              return <GoalCard 
+                key={objective.id}
+                objective={objective} 
+                showModal={setShowKeyResultModal}
+                objectiveId={setObjectiveId}
+                teamGoal={false}
+                companyGoal={false}
+              />
+            })
+          }
         </div>
       </div>
       {

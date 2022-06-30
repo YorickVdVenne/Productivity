@@ -1,0 +1,42 @@
+.timeline {
+
+}
+
+.headline {
+    width: 100%;
+    height: 12px;
+    background-color: #C398B7;
+    display: flex;
+    justify-content: space-between;
+}
+
+.secondline {
+    position: absolute;
+    background-color: #873170;
+    border: 1px solid #873170;
+    width: 30%;
+    height: 12px;
+    top: 62px;
+}
+
+.months {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 16px;
+}
+
+.year {
+    color: white;
+    font-size: 13px;
+    z-index: 999;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.quarters {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
