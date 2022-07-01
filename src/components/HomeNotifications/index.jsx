@@ -16,9 +16,9 @@ export default function HomeNotifications() {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Link href='/employee/goals'>
+                    <Link href='/employee/feedback/give'>
                         <a className={styles.link}>
-                            <span className={styles.link_text}>Show</span>
+                            <span className={styles.link_text}>Give feedback</span>
                             <Arrow blue={true}/>
                         </a>
                     </Link>
@@ -33,9 +33,9 @@ export default function HomeNotifications() {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Link href='/employee/goals'>
+                    <Link href='/employee/feedback/give'>
                         <a className={styles.link}>
-                            <span className={styles.link_text}>Show</span>
+                            <span className={styles.link_text}>Self-assessment</span>
                             <Arrow blue={true}/>
                         </a>
                     </Link>
@@ -43,16 +43,16 @@ export default function HomeNotifications() {
             </div>
             <div className={styles.card}>
                 <div className={styles.left}>
-                    <img className={styles.profile} src='../../../assets/tina-turnster.svg' />
+                    <img className={styles.profile} src='../../../assets/io-profile.svg' />
                     <div className={styles.text_wrapper}>
-                        <p className={styles.title}>Your 1:1 with Tina is coming up</p>
+                        <p className={styles.title}>Don't forget to track your progress!</p>
                         <p className={styles.time}>a day ago</p>
                     </div>
                 </div>
                 <div className={styles.right}>
                     <Link href='/employee/goals'>
                         <a className={styles.link}>
-                            <span className={styles.link_text}>Show</span>
+                            <span className={styles.link_text}>Goals</span>
                             <Arrow blue={true}/>
                         </a>
                     </Link>
