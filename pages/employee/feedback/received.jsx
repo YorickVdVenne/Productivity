@@ -4,7 +4,7 @@ import styles from '../../../styles/Employee.module.scss';
 
 const EmployeeNavigation = dynamic(() => import('../../../src/components/EmployeeNavigation'));
 
-export default function Stored() {
+export default function Reveived() {
   return (
     <div className={styles.body}>
       <EmployeeNavigation />

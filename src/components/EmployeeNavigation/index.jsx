@@ -63,7 +63,7 @@ export default function EmployeeNavigation() {
                         </Link>
                     </div> : ''}
                 </div>
-                <div className={`${styles.items} ${activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request' || activeLink === '/employee/feedback/give' || activeLink === '/employee/feedback/stored' || activeLink === '/employee/feedback/progress' ? styles.active : ''}`}>
+                <div className={`${styles.items} ${activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request' || activeLink === '/employee/feedback/give' || activeLink === '/employee/feedback/received' || activeLink === '/employee/feedback/progress' ? styles.active : ''}`}>
                     <Link href='/employee/feedback'>
                         <a className={`${styles.links} ${activeLink === '/employee/feedback' ? styles.active : ''}`} onClick={() => setActiveLink('feedback')}>
 
@@ -71,7 +71,7 @@ export default function EmployeeNavigation() {
                             <span className={styles.iconText}>Feedback</span>
                         </a>
                     </Link>
-                    {activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request'  || activeLink === '/employee/feedback/give' || activeLink === '/employee/feedback/stored' || activeLink === '/employee/feedback/progress' ? <div className={styles.sublinks}>
+                    {activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request'  || activeLink === '/employee/feedback/give' || activeLink === '/employee/feedback/received' || activeLink === '/employee/feedback/progress' ? <div className={styles.sublinks}>
                         <Link href='/employee/feedback'>
                             <a className={`${styles.item} ${activeLink === '/employee/feedback' ||  activeLink === '/employee/feedback/give' ? styles.active : ''}`}>
                                 <span>Overview</span>
@@ -84,10 +84,10 @@ export default function EmployeeNavigation() {
                                 {activeLink === '/employee/feedback/request' && <div className={styles.arrow}><Arrow /></div>}
                             </a>
                         </Link>
-                        <Link href='/employee/feedback/stored'>
-                            <a className={`${styles.item} ${activeLink === '/employee/feedback/stored' ? styles.active : ''}`}>
-                                <span>Stored</span>
-                                {activeLink === '/employee/feedback/stored' && <div className={styles.arrow}><Arrow /></div>}
+                        <Link href='/employee/feedback/received'>
+                            <a className={`${styles.item} ${activeLink === '/employee/feedback/received' ? styles.active : ''}`}>
+                                <span>Received</span>
+                                {activeLink === '/employee/feedback/received' && <div className={styles.arrow}><Arrow /></div>}
                             </a>
                         </Link>
                         <Link href='/employee/feedback/progress'>
