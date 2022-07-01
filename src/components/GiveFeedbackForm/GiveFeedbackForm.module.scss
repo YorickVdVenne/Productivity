@@ -1,0 +1,78 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.left {
+    width: 48%;
+}
+
+.right {
+    width: 48%;
+}
+
+.feedback {
+    margin-bottom: 24px;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.textarea {
+    resize: none;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    font-family: 'TT Commons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: 0;
+    padding: 8px;
+}
+
+.textarea::placeholder {
+    font-family: 'TT Commons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    opacity: 50%;
+}
+
+.score {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}

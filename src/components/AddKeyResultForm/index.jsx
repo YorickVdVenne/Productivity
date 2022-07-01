@@ -4,8 +4,6 @@ import { db } from '../../../db/db';
 
 export default function AddKeyResultForm({onSend, objectiveId}) {
 
-    
-
     async function handleSubmit(e) {
         e.preventDefault();
         const result = e.target.result.value;

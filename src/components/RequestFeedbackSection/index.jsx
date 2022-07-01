@@ -33,7 +33,7 @@ export default function RequestFeedbackSection() {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Link href='/employee/goals'>
+                    <Link href='/employee/feedback/give'>
                         <a className={styles.link}>
                             <span className={styles.link_text}>Self-assessment</span>
                             <Arrow blue={true}/>
