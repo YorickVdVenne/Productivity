@@ -18,7 +18,7 @@ export default function RequestFeedbackSection() {
                 <div className={styles.right}>
                     <Link href='/employee/feedback/request'>
                         <a className={styles.link}>
-                            <span className={styles.link_text}>Show</span>
+                            <span className={styles.link_text}>Request feedback</span>
                             <Arrow blue={true}/>
                         </a>
                     </Link>
@@ -35,7 +35,7 @@ export default function RequestFeedbackSection() {
                 <div className={styles.right}>
                     <Link href='/employee/goals'>
                         <a className={styles.link}>
-                            <span className={styles.link_text}>Show</span>
+                            <span className={styles.link_text}>Self-assessment</span>
                             <Arrow blue={true}/>
                         </a>
                     </Link>

@@ -8,6 +8,7 @@
     background-color: #C398B7;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .secondline {
@@ -16,7 +17,7 @@
     border: 1px solid #873170;
     width: 45%;
     height: 12px;
-    top: 72px;
+    top: 80px;
 }
 
 .months {
@@ -39,8 +40,38 @@
     display: flex;
     justify-content: space-between;
     width: 76.5%;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     font-weight: 400;
     font-size: 18px;
     margin-left: 48px;
+}
+
+.review_first {
+    position: absolute;
+    background: #873170;
+    border: 2px solid #873170;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    top: 70px;
+    left: 38%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review {
+    position: absolute;
+    background: #FFFFFF;
+    border: 2px solid #C398B7;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    top: 70px;
+    right:20%;
+}
+
+.check {
+    width: 21px;
+    height: 21px;
 }

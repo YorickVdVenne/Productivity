@@ -16,6 +16,10 @@ export default function FeedbackTimeline() {
                 <span className={styles.year}>2023</span>
             </div>
             <div className={styles.secondline} />
+            <div className={styles.review_first}>
+                <img className={styles.check} src='../../../assets/check.svg' />
+            </div>
+            <div className={styles.review} />
             <div className={styles.months}>
                 <span>Jan</span>
                 <span>Feb</span>
