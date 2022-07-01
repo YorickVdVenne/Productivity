@@ -14,9 +14,9 @@
     position: absolute;
     background-color: #873170;
     border: 1px solid #873170;
-    width: 30%;
+    width: 45%;
     height: 12px;
-    top: 62px;
+    top: 72px;
 }
 
 .months {
@@ -38,5 +38,9 @@
 .quarters {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 76.5%;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: 48px;
 }

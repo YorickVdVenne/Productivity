@@ -1,0 +1,68 @@
+.button {
+  padding: 8px 16px 8px 16px;
+  background-color: white;
+  border-radius: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 250ms ease-in-out;
+  border: 3px solid #4BC190;
+
+  &:hover {
+      background: #4BC190;
+      border: 3px solid #4BC190;
+      cursor: pointer;
+
+      .text {
+          color: white;
+      }
+  }
+}
+  
+.text {
+  font-family: 'TT Commons';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+
+  text-align: center;
+  letter-spacing: 0;
+  color: #4BC190;
+}
+
+.requested {
+  padding: 12px;
+  background-color: #9F9F9F;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  border: 3px solid #9F9F9F;
+}
+
+.requested_text {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.received {
+  padding: 12px;
+  background-color: #9F9F9F;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  border: 3px solid #9F9F9F;
+}
+
+.received_text {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.check {
+  margin-right: 8px;
+}
