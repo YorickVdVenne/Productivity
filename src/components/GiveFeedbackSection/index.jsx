@@ -16,7 +16,7 @@ export default function GiveFeedbackSection() {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Link href='/employee/goals'>
+                    <Link href='/employee/feedback/give'>
                         <a className={styles.link}>
                             <span className={styles.link_text}>Give feedback</span>
                             <Arrow blue={true}/>
@@ -33,7 +33,7 @@ export default function GiveFeedbackSection() {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Link href='/employee/goals'>
+                    <Link href='/employee/feedback/give'>
                         <a className={styles.link}>
                             <span className={styles.link_text}>Give feedback</span>
                             <Arrow blue={true}/>
@@ -50,7 +50,7 @@ export default function GiveFeedbackSection() {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Link href='/employee/goals'>
+                    <Link href='/employee/feedback/give'>
                         <a className={styles.link}>
                             <span className={styles.link_text}>Give feedback</span>
                             <Arrow blue={true}/>

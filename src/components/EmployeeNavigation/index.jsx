@@ -63,7 +63,7 @@ export default function EmployeeNavigation() {
                         </Link>
                     </div> : ''}
                 </div>
-                <div className={`${styles.items} ${activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request' || activeLink === '/employee/feedback/stored' || activeLink === '/employee/feedback/progress' ? styles.active : ''}`}>
+                <div className={`${styles.items} ${activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request' || activeLink === '/employee/feedback/give' || activeLink === '/employee/feedback/stored' || activeLink === '/employee/feedback/progress' ? styles.active : ''}`}>
                     <Link href='/employee/feedback'>
                         <a className={`${styles.links} ${activeLink === '/employee/feedback' ? styles.active : ''}`} onClick={() => setActiveLink('feedback')}>
 
@@ -71,11 +71,11 @@ export default function EmployeeNavigation() {
                             <span className={styles.iconText}>Feedback</span>
                         </a>
                     </Link>
-                    {activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request' || activeLink === '/employee/feedback/stored' || activeLink === '/employee/feedback/progress' ? <div className={styles.sublinks}>
+                    {activeLink === '/employee/feedback' || activeLink === '/employee/feedback/request'  || activeLink === '/employee/feedback/give' || activeLink === '/employee/feedback/stored' || activeLink === '/employee/feedback/progress' ? <div className={styles.sublinks}>
                         <Link href='/employee/feedback'>
-                            <a className={`${styles.item} ${activeLink === '/employee/feedback' ? styles.active : ''}`}>
+                            <a className={`${styles.item} ${activeLink === '/employee/feedback' ||  activeLink === '/employee/feedback/give' ? styles.active : ''}`}>
                                 <span>Overview</span>
-                                {activeLink === '/employee/feedback' && <div className={styles.arrow}><Arrow /></div>}
+                                {activeLink === '/employee/feedback' || activeLink === '/employee/feedback/give' ? <div className={styles.arrow}><Arrow /></div>: ''}
                             </a>
                         </Link>
                         <Link href='/employee/feedback/request'>
