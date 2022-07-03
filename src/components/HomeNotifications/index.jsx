@@ -45,7 +45,7 @@ export default function HomeNotifications() {
                 <div className={styles.left}>
                     <img className={styles.profile} src='../../../assets/io-profile.svg' />
                     <div className={styles.text_wrapper}>
-                        <p className={styles.title}>Don't forget to track your progress!</p>
+                        <p className={styles.title}>Don&apos;t forget to track your progress!</p>
                         <p className={styles.time}>a day ago</p>
                     </div>
                 </div>

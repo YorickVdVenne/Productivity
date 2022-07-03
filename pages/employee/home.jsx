@@ -46,6 +46,7 @@ export default function Home() {
           {objectives.length > 0 && 
             objectives.map(objective => {
               return <HomeGoalCard 
+                key={objective.id}
                 objective={objective} 
               />
             })

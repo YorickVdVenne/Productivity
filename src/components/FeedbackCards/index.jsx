@@ -22,7 +22,7 @@ export default function FeedbackCards() {
                     <RatingStars fixed={true} value={4.0} size={'20px'}/>
                 </div>
                 <p className={styles.text}>
-                    Asks one's boss for more responsibilities in order to broaden one's skill set and keep one stimulated and motivated to work
+                    Asks one&apos;s boss for more responsibilities in order to broaden one&apos;s skill set and keep one stimulated and motivated to work
                 </p>
             </div>
             <div className={styles.card}>
@@ -40,7 +40,7 @@ export default function FeedbackCards() {
                     <RatingStars fixed={true} value={3.0} size={'20px'}/>
                 </div>
                 <p className={styles.text}>
-                    Feels overwhelmed when there is too much work to do which kills one's motivation
+                    Feels overwhelmed when there is too much work to do which kills one&apos;s motivation
                 </p>
             </div>
             <div className={styles.card}>
@@ -49,7 +49,7 @@ export default function FeedbackCards() {
                     <RatingStars fixed={true} value={4.5} size={'20px'}/>
                 </div>
                 <p className={styles.text}>
-                    Takes occasional breaks between tasks or projects in order to refresh one's mind and feel motivated to work
+                    Takes occasional breaks between tasks or projects in order to refresh one&apos;s mind and feel motivated to work
                 </p>
             </div>
         </div>
