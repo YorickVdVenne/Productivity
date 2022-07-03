@@ -1,4 +1,3 @@
-
 import React from 'react';
 import dynamic from 'next/dynamic';
 import BackToOverviewButton from '../../../src/components/BackToOverviewButton';
@@ -11,8 +10,6 @@ const EmployeeNavigation = dynamic(() => import('../../../src/components/Employe
 
 export default function Give() {
   const [sendStatus, setSendStatus] = React.useState(false);
-
-  console.log(sendStatus)
 
   return (
     <div className={styles.body}>

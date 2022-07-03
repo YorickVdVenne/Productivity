@@ -13,7 +13,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@ export default function GiveFeedbackForm({onSend}) {
                         <h3 className={styles.title}>Motivate</h3>
                         <div className={styles.rating}>
                             <div className={styles.stars}>
-                                <RatingStars />
+                                <RatingStars fixed={false} value={0.0} size={'35px'}/>
                             </div>
                         </div>
                     </div>

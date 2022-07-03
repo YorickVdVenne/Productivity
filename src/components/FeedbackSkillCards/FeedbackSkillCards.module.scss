@@ -1,0 +1,52 @@
+.collection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    width: 100%;
+    background-color: white;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    margin-left: 12px;
+}
+
+.score {
+    font-size: 18px;
+    margin-right: 16px;
+}
+
+.stars {
+    margin-right: 16px;
+}
+
+.show {
+    margin-left: 8px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.show_text {
+    color: #3A5DD4;
+    margin-right: 12px;
+    font-size: 18px;
+}

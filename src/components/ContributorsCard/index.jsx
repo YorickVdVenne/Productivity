@@ -18,7 +18,7 @@ export default function ContributorsCard({contributor}) {
                     <div className={styles.activities_button} onClick={() => setShowActivities(true)}>
                         See activities <div className={styles.arrow}><Arrow dark={true}/></div>
                     </div> : 
-                    <div>
+                    <div className={styles.uparrow}>
                         <UpArrow onClick={() => setShowActivities(false)}/>
                     </div>
                 } 

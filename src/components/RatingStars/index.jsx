@@ -1,14 +1,20 @@
 import React from 'react';
 import { Rating } from 'react-simple-star-rating'
 
-export default function RatingStars() {
-    const [rating, setRating] = React.useState(0.0)
+export default function RatingStars({fixed, value, size}) {
+    const [rating, setRating] = React.useState(value)
 
     const handleRating = (rate) => {
         setRating(rate)
     } 
 
     return (
-        <Rating size={'35px'} onClick={handleRating} ratingValue={rating} showTooltip />
+        <>
+            {fixed ?
+                <Rating size={size} onClick={() => console.log('do nothing')} initialValue={rating} readonly={rating} allowHalfIcon/>
+                :
+                <Rating size={size} onClick={handleRating} ratingValue={rating} showTooltip />
+            }
+        </>
     );
   }
